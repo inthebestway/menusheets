@@ -1,0 +1,6 @@
+*.pyc
+static/*
+gdocs.py
+.python-version
+Menus.json
+sheetscred.json

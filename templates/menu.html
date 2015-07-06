@@ -1,0 +1,104 @@
+
+<html>
+
+<header>
+    <h1>{{ COPY.food }}</h1>
+
+</header>
+
+<head>
+  <link rel="stylesheet" href="../static/css/foundation.css">
+
+  <link rel="stylesheet" href="../static/css/normalize.css">
+  <!-- This is how you would link your custom stylesheet -->
+  <link rel="stylesheet" href="../static/css/app.css">
+  <script src="../static/js/vendor/modernizr.js"></script>
+
+
+</head>
+
+
+{% include 'base.html' %}
+
+<body>
+
+
+
+
+{% for group in COPY.Food|groupby('Course') %}
+    <div id="menu-section" class="row">
+    	<h2 class="large-4 medium-3 columns" >{{ group.grouper }} </h2>
+			<dl class="large-8 medium-9 small-12 columns " >
+			    <br/>
+
+			    {% for row in group.list %}
+			        <div class="row">
+			        	<div class="small-10 columns left">
+			      			  <dt>{{ row.Name }}</dt> 
+			      			  <dd>{{ row.Description }}</dd>
+			    		</div>
+			    		<div class="small-2 columns right">
+			      			  <p>{{ row.Price}} </p> 	
+			      		</div>
+			      	</div>
+
+			    {% endfor %}
+			</dl>
+	</div>
+{% endfor %}
+
+<hr>
+
+<h1> accordion MENU </h1>
+<p>http://foundation.zurb.com/docs/v/3.2.5/elements.php#accCode</p>
+
+
+<dl class="accordion" data-accordion>
+
+  {% for group in COPY.Food|groupby('Course') %}
+
+  <dd class="accordion-navigation">
+    <a href="#{{ group.grouper }}">{{ group.grouper }}</a>
+    <div id="{{ group.grouper }}" class="content">
+        <div class="menu-items">
+          {% for row in group.list %}
+                  <p> {{ row.Name }} -- {{ row.Price}}</p>
+                    <p>{{ row.Description }}</p>
+          {% endfor %}
+        </div>
+    </div>
+  </dd>
+  {% endfor %}
+</dl>
+
+
+
+<hr>
+
+<h1> with tabs </h1>
+
+<dl class="tabs">
+  {% for group in COPY.Food|groupby('Course') %}
+  <dd><a href="#{{ group.grouper }}">{{ group.grouper }}</a></dd>
+     {% endfor %}
+</dl>
+<ul class="tabs-content">
+  <li class="active" id="AppetizersTab">This is simple tab 1s content. Pretty neat, huh?</li>
+  <li id="BrunchTab">This is simple tab 2s content. Now you see it!</li>
+  <li id="EntreesTab">This is simple tab 3s content.</li>
+</ul>
+
+
+
+<script src="../static/js/vendor/jquery.js"></script>
+<script src="../static/js/foundation.min.js"></script>
+<script>
+$(document).foundation();
+</script>
+
+
+</body>
+
+
+
+</html>

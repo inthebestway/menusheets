@@ -1,0 +1,11 @@
+<header>
+    <h1>{{ COPY.newsheet.0.value }}</h1>
+    <h2>{{ COPY.newsheet.0.key }}</h2>
+    <h3>{{ COPY.newsheet.0.description }}</h3>
+</header>
+
+<dl>
+    {% for row in COPY.Sheet1 %}
+    <dt>{{ row.a }}</dt><dd>{{ row.d }}</dd>
+    {% endfor %}
+</dl>

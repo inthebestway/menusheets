@@ -1,0 +1,140 @@
+
+<html>
+
+<header>
+    <h1>{{ COPY.food }}</h1>
+
+</header>
+
+<head>
+  <link rel="stylesheet" href="../static/css/foundation.css">
+
+  <link rel="stylesheet" href="../static/css/normalize.css">
+  <!-- This is how you would link your custom stylesheet -->
+  <link rel="stylesheet" href="../static/css/app.css">
+  <script src="../static/js/vendor/modernizr.js"></script>
+
+
+</head>
+
+
+{% include 'base.html' %}
+
+<body>
+
+
+
+
+
+
+<h1> tab test </h1>
+<p>FIX:  http://stackoverflow.com/questions/24817679/foundation-tab-not-working </p> 
+
+<dl class="tabs vertical" data-tab="">
+  <dd class="tab-title active"><a href="#panel1">Tab 1</a></dd>
+  <dd class="tab-title"><a href="#panel2">Tab 2</a></dd>
+  <dd class="tab-title"><a href="#panel3">Tab 3</a></dd>
+  <dd class="tab-title"><a href="#panel4">Tab 4</a></dd>
+</dl>
+<div class="tabs-content">
+  <div class="content active" id="panel1">
+    <p>This is the first panel of the basic tab example. You can place all sorts of content here including a grid.</p>
+  </div>
+  <div class="content" id="panel2">
+    <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+  </div>
+  <div class="content" id="panel3">
+    <p>This is the third panel of the basic tab example. This is the third panel of the basic tab example.</p>
+  </div>
+  <div class="content" id="panel4">
+    <p>This is the fourth panel of the basic tab example. This is the fourth panel of the basic tab example.</p>
+  </div>
+</div>
+
+
+
+<h2> accordion example </h2>
+
+
+<p> working example : http://foundation.zurb.com/docs/components/accordion.html </p>
+
+<dl class="accordion" data-accordion>
+  <dd class="accordion-navigation">
+    <a href="#panel1b">Accordion 1</a>
+    <div id="panel1b" class="content active">
+      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a href="#panel2b">Accordion 2</a>
+    <div id="panel2b" class="content">
+      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </dd>
+  <dd class="accordion-navigation">
+    <a href="#panel3b">Accordion 3</a>
+    <div id="panel3b" class="content">
+      Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </dd>
+</dl>
+
+
+
+<h2> accordion 2 </h2>
+<ul class="accordion vertical-tabs" data-accordion>
+  <li class="accordion-navigation">
+    <a href="#panel1a">Accordion 1</a>
+    <div id="panel1a" class="content active">
+      Panel 1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </li>
+  <li class="accordion-navigation">
+    <a href="#panel2a">Accordion 2</a>
+    <div id="panel2a" class="content">
+      Panel 2. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </li>
+  <li class="accordion-navigation">
+    <a href="#panel3a">Accordion 3</a>
+    <div id="panel3a" class="content">
+      Panel 3. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+  </li>
+</ul>
+
+
+
+
+<h2> section-container example </h2>
+
+<div class="section-container vertical-tabs" data-section="vertical-tabs">
+<div class="section-container tabs" data-section="tabs">
+  <section class="active">
+    <p class="title" data-section-title><a href="#">Section 1</a></p>
+    <div class="content" data-section-content>
+      <p>Content of section 1.</p>
+    </div>
+  </section>
+  <section>
+    <p class="title" data-section-title><a href="#">Section 2</a></p>
+    <div class="content" data-section-content>
+      <p>Content of section 2.</p>
+    </div>
+  </section>
+</div>
+
+
+
+<script src="../static/js/vendor/jquery.js"></script>
+<script src="../static/js/foundation.min.js"></script>
+<script>
+$(document).foundation();
+</script>
+
+
+</body>
+
+
+
+</html>
