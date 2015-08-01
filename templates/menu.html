@@ -62,9 +62,17 @@
     <div id="{{ group.grouper }}" class="content">
         <div class="menu-items row">
           {% for row in group.list %}
-                <div class="small-10 columns left">
+                <div class="medium-2 hide-for-small-only columns left">
+
+                  <p></p>
+                </div>
+                <div class="small-10 medium-8 columns left">
+
                     <ul class="no-bullet">
                     <li><strong>{{ row.Name }} </strong>
+                      {%- if row.Extras -%}
+                       <div id="extraInfo"> ({{ row.Extras }}) </div>
+                      {%- endif %}
                       <p>    {{ row.Description }} </p> </li>
                   </ul>
               </div>
