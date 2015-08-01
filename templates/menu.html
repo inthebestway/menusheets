@@ -58,12 +58,20 @@
   {% for group in COPY.Food|groupby('Course') %}
 
   <dd class="accordion-navigation">
-    <a href="#{{ group.grouper }}">{{ group.grouper }}</a>
+    <a href="#{{ group.grouper }}"><h4>{{ group.grouper }}</h4></a>
     <div id="{{ group.grouper }}" class="content">
-        <div class="menu-items">
+        <div class="menu-items row">
           {% for row in group.list %}
-                  <p> {{ row.Name }} -- {{ row.Price}}</p>
-                    <p>{{ row.Description }}</p>
+                <div class="small-10 columns left">
+                    <ul class="no-bullet">
+                    <li><strong>{{ row.Name }} </strong>
+                      <p>    {{ row.Description }} </p> </li>
+                  </ul>
+              </div>
+              <div class="small-2 columns right">
+                    <p>{{ row.Price}} </p>  
+                </div>
+                <hr>
           {% endfor %}
         </div>
     </div>
