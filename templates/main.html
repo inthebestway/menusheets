@@ -1,0 +1,51 @@
+
+<html>
+
+
+
+<header>
+    <h1> Routes </h1>
+
+</header>
+
+{% include 'base.html' %}
+
+<body>
+
+
+<h1> tab test </h1>
+<p>FIX:  http://stackoverflow.com/questions/24817679/foundation-tab-not-working </p> 
+
+<div class="row">
+
+    <div class="small-4 medium-3 columns">
+
+        <dl class="tabs vertical" data-tab="">
+          <dd class="tab-title active"><a href="#panel1">Navigation</a></dd>
+          <dd class="tab-title"><a href="#panel2">Summary</a></dd>
+
+        </dl>
+    </div>
+
+    <div class="small-8 medium-9 columns">
+
+        <div class="tabs-content">
+              <div class="content active" id="panel1">
+                    {% for line in Routes %}
+                        <p> <a href = {{line.url}}> {{line.rule}} </a> -- {{line.url}} , {{line.methods}} </p>
+                    {% endfor %}
+              </div>
+              <div class="content" id="panel2">
+                <p>This is the second panel of the basic tab example. This is the second panel of the basic tab example.</p>
+              </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+{% include '_footer.html' %}
+

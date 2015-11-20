@@ -12,9 +12,6 @@
 
 <body>
 
-
-
-
 {% for group in COPY.Food|groupby('Course') %}
     <div id="menu-section" class="row">
     	<h2 class="large-4 medium-3 columns" >{{ group.grouper }} </h2>
@@ -43,17 +40,17 @@
 <p>http://foundation.zurb.com/docs/v/3.2.5/elements.php#accCode</p>
 
 
-<dl class="accordion" data-accordion>
+<div class ="row">
+<dl class="accordion vertical-tabs"  data-accordion>
 
   {% for group in COPY.Food|groupby('Course') %}
 
-  <dd class="accordion-navigation">
+  <dd class=" vertical-tabs">
     <a href="#{{ group.grouper }}"><h4>{{ group.grouper }}</h4></a>
     <div id="{{ group.grouper }}" class="content">
         <div class="menu-items row">
           {% for row in group.list %}
                 <div class="medium-2 hide-for-small-only columns left">
-
                   <p></p>
                 </div>
                 <div class="small-10 medium-8 columns left">
@@ -61,9 +58,9 @@
                     <ul class="no-bullet">
                     <li><strong>{{ row.Name }} </strong>
                       {%- if row.Extras -%}
-                       <div id="extraInfo"> ({{ row.Extras }}) </div>
+                       <i id="extraInfo"> ({{ row.Extras }}) </i>
                       {%- endif %}
-                      <p>    {{ row.Description }} </p> </li>
+                      <p>{{ row.Description }} </p> </li>
                   </ul>
               </div>
               <div class="small-2 columns right">
@@ -76,7 +73,7 @@
   </dd>
   {% endfor %}
 </dl>
-
+</div>
 
 
 <hr>
@@ -96,15 +93,7 @@
 
 
 
-<script src="../static/js/vendor/jquery.js"></script>
-<script src="../static/js/foundation.min.js"></script>
-<script>
-$(document).foundation();
-</script>
+<hr>
 
 
-</body>
-
-
-
-</html>
+{% include '_footer.html' %}

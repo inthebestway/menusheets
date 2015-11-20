@@ -1,0 +1,32 @@
+
+
+<div class="row">
+
+<hr>
+<hr>
+
+    <ul class="inline-list">
+        {% for line in Routes %}
+            <li> <a href = {{line.url}}> {{line.rule}} </a>  <!--  {{line.url}} , {{line.methods}} -->
+            </li>
+        {% endfor %}
+    </ul>
+
+</div>
+<footer>
+</footer>
+
+
+
+<script src="../static/js/vendor/jquery.js"></script>
+<script src="../static/js/foundation.min.js"></script>
+<script>
+$(document).foundation();
+</script>
+
+
+</body>
+
+
+
+</html>
